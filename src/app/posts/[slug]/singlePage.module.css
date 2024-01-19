@@ -1,0 +1,139 @@
+.container{
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  
+  .infoContainer {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .textContainer {
+    flex: 1;
+  }
+  
+  .title {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    font-family: "Abel", sans-serif;
+    font-weight: bold;
+    color: rgb(192, 158, 23);
+  }
+  
+  .user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+  }
+  
+  .userImageContainer {
+    width: 50px;
+    height: 50px;
+    position: relative;
+  }
+  
+  .avatar {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .userTextContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: var(--softTextColor);
+  }
+  
+  .date{
+    font-size: .8rem;
+  }
+  
+  .username {
+    font-size: .9rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+  
+  .imageContainer {
+    flex: 1;
+    height: 350px;
+    position: relative;
+  }
+  
+  .imageContainer img{
+    border-radius: 10px;
+   box-shadow: 2px 2px 2px var(--textColor);
+  }
+  
+  .image {
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .content {
+    display: flex;
+    gap: 50px;
+  }
+  
+  .post {
+    flex: 5;
+    margin-top: 60px;
+  }
+  
+  .description p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 28px;
+    margin-bottom: 20px;
+  }
+  
+  @media screen and (max-width: 1536px) {
+    .title {
+      font-size: 3.5rem;
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    .title {
+      font-size: 3rem;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .infoContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .imageContainer {
+      width: 500px;
+      position: relative;
+      flex: 0 0 300px;
+    }
+    .container{
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 80px;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    .title {
+      font-size: 2rem;
+    }
+    .imageContainer {
+      width: 95%;
+      position: relative;
+      flex: 0 0 300px;
+    }
+  
+    .description p{
+      font-size: 1rem;
+    }
+    .textContainer {
+      flex: 1;
+      text-align: center;
+    }
+  }

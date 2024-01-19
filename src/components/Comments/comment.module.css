@@ -1,0 +1,79 @@
+.container {
+    margin-top: 50px;
+    
+  }
+  
+  .title {
+    color: var(--softTextColor);
+    margin-bottom: 30px;
+    font-family: "Roboto", sans-serif;
+    background: -webkit-linear-gradient( rgb(230, 120, 24),rgba(54, 146, 33, 0.74));
+    background-image: linear-gradient(to right bottom, rgb(230, 120, 24),rgba(62, 206, 30, 0.74));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .write {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .input {
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .button {
+    padding: 30px 25px;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .comments{
+    margin-top: 50px;
+  }
+  
+  .comment{
+    margin-bottom: 50px;
+    background-color: var(--softBg);
+    padding: 30px;
+  }
+  
+  .user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .image {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: var(--softTextColor);
+  }
+  
+  .username {
+    font-weight: 500;
+  }
+  
+  .date{
+    font-size: 14px;
+  }
+  
+  .desc{
+    font-size: 18px;
+    font-weight: 300;
+  }
