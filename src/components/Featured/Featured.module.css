@@ -1,10 +1,12 @@
 .container{
     margin-top: 30px;
+    padding-top: 140px;
 }
 
 .title{
-    font-size: 86px;
+    font-size: 2.7rem;
     font-weight: 300;
+    color: rgb(35, 116, 116);
 }
 
 .post{
@@ -17,7 +19,7 @@
 .imgContainer{
     position: relative;
     flex:1;
-    height: 500px;
+    height: 380px;
 }
 
 .textContainer{
@@ -30,51 +32,72 @@
 
 .image{
     object-fit: cover;
+    border-radius: 10px;
+    /* height: 380px; */
 }
 
 .postTitle{
-    font-size: 40px;
+    font-size: 2.4rem;
 }
 
 .postDesc{
-    font-size: 20px;
+    font-size: 1.1rem;
     font-weight: 300;
     color: var(--softTextColor)
 }
 
 .button{
-    padding: 16px 20px;
+    padding: 8px 10px;
     width: max-content;
     font-size: larger;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 
 @media screen and (max-width: 1280px) {
     .title{
-        font-size: 72px;
+        font-size: 2.62rem;
     }
 }
 
 @media screen and (max-width: 1024px) {
     .title{
-        font-size: 64px;
+        font-size: 4rem;
     }
     .imgContainer{
         display: none;
+    }
+    .postTitle{
+        font-size: 2.2rem;
+    }
+    .postDesc{
+        font-size: 1.2rem;
     }
 }
 
 @media screen and (max-width: 768px) {
     .title{
-        font-size: 46px;
+        font-size: 3rem;
+    }
+    .postTitle{
+        font-size: 2.2rem;
+    }
+    .postDesc{
+        font-size: 1rem;
     }
 }
 
 @media screen and (max-width: 640px) {
     .title{
-        font-size: 36px;
+        font-size: 2.2rem;
+    }
+    .postTitle{
+        font-size: 1.6rem;
+    }
+    .postDesc{
+        font-size: 0.8rem;
     }
 }
 

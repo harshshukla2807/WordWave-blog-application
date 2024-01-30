@@ -5,6 +5,7 @@
 
 .title{
     margin: 50px 0px;
+    color: rgb(174, 187, 90);
 }
 
 .categories{
@@ -17,34 +18,39 @@
 
 .category{
     display: flex;
-    border-radius: 5px;
+    border-radius: 15px;
 align-items: center;    
 justify-content: center;
 gap: 10px;
 text-transform: capitalize;
 width: 15%;
 height: 80px;
+transition: all 0.2s ease-in-out;
 }
+.category:hover{
+    transform: scale(1.1);
+}
+
 
 .image{
     border-radius: 50%;
 }
 
 
-.style{
-    background-color: rgb(164, 164, 209);
+.sports{
+    background-color: rgb(51, 51, 250);
 }
 
 
 .fashion{
-    background-color: rgb(153, 198, 145);
+    background-color: rgb(177, 119, 221);
 
     
 }
 
 
 .food{
-    background-color: rgb(217, 140, 190);
+    background-color: rgb(131, 31, 96);
 
 }
 
@@ -56,12 +62,12 @@ height: 80px;
 }
 
 
-.culture{
-    background-color: rgb(148, 207, 206);
+.tech{
+    background-color: rgb(60, 153, 152);
 }
 
-.coding{
-    background-color: rgb(188, 137, 137);
+.trading{
+    background-color: rgb(28, 131, 67);
 
     
 }

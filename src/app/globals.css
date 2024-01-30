@@ -1,7 +1,7 @@
 :root{
     --bg:white;
     --textColor:black;
-    --softBg: #f0f0f0;
+    --softBg: #f0f0f0a4;
     --softTextColor: #626262;
 }
 
@@ -39,7 +39,24 @@ a{
     min-height: 100vh;
     background-color: var(--bg);
     color: var(--textColor);
+    /* margin-top: 100px; */
     
+}
+
+.ql-container{
+    border: none !important;
+    height:91% !important;
+    font-size: 1.4rem !important;
+
+}
+.ql-toolbar.ql-snow{
+    background-color: white !important;
+    border-radius:.8rem .8rem 0 0 !important;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1) !important;
+    border: none !important;
+    border-bottom: 3px solid black !important;
+
+
 }
 
 .wrapper {  
@@ -47,12 +64,13 @@ a{
     margin-right: auto;
     max-width: 90%;
     padding-left: 80px;
-    padding-right: 80px;
+        padding-right: 80px;
 }
 
  @media screen and (max-width: 1536px){
     .wrapper{
         max-width: 90%;
+        
     }
 }
 @media screen and (max-width: 1280px) {
@@ -64,12 +82,16 @@ a{
 @media screen and (max-width: 1080px) {
     .wrapper{
         max-width: 90%;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
 @media screen and (max-width: 768px) {
     .wrapper{
         max-width: 90%;
+        
+        
     }
 }
 
@@ -86,4 +108,10 @@ a{
 
 .quill > .ql-container > .ql-editor.ql-blank::before{
     color: #b3b3b1;
+}
+
+.blogName_styles{
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-family: cursive;
 }

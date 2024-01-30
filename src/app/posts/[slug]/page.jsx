@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import styles from "./singlePage.module.css";
 import Image from "next/image";
 import Menu from "@/components/Menu/Menu";
 import Comments from "@/components/Comments/Comments";
+import Loading from "@/app/Loading";
 
 const getData = async (slug) => {
   const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
@@ -22,6 +23,7 @@ const SinglePage = async({params}) => {
 const data= await getData(slug)
   
   return (
+    <Suspense fallback={<Loading/>} >
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.textContainer}>
@@ -54,6 +56,7 @@ const data= await getData(slug)
           <Menu />
       </div>
     </div>
+    </Suspense>
   );
 };
 

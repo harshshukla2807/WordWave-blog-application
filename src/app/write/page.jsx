@@ -2,8 +2,7 @@
 import Image from "next/image";
 import styles from "./writePage.module.css";
 import { useEffect, useState } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.bubble.css";
+import "react-quill/dist/quill.snow.css";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import {
@@ -13,19 +12,50 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
+import { IoMdCloudUpload } from "react-icons/io";
+import ReactQuill from "react-quill";
+import toast from 'react-hot-toast';
+import Loading from "../Loading";
+
 
 const storage = getStorage(app);
+
+const successNotify  = () => toast.success('Post created successfully');
+
 
 const WritePage = () => {
   const router = useRouter();
   const { status } = useSession();
 
   const [file, setFile] = useState(null);
-  const [open, setOpen] = useState("false");
+  // const [open, setOpen] = useState("false");
   const [media, setMedia] = useState("");
-
   const [title, setTitle] = useState("");
   const [value, setValue] = useState("");
+  const [catSlug, setCatSlug] = useState("");
+  const [loading , setLoading]= useState(false)
+
+  const modules = {
+    toolbar: [
+      ["bold", "italic", "underline", "strike"], // toggled buttons
+      ["blockquote", "code-block"],
+
+      [{ header: 1 }, { header: 2 }], // custom button values
+      [{ list: "ordered" }, { list: "bullet" }],
+      [{ script: "sub" }, { script: "super" }], // superscript/subscript
+      [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
+      [{ direction: "rtl" }], // text direction
+
+      [{ size: ["small", false, "large", "huge"] }], // custom dropdown
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+
+      [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+      [{ font: [] }],
+      [{ align: [] }],
+
+      ["clean"], // remove formatting button
+    ],
+  };
 
   useEffect(() => {
     const upload = () => {
@@ -80,7 +110,9 @@ const WritePage = () => {
       .replace(/[\s_-]+/g, "-")
       .replace(/^-+|-+$/g, "");
       
+
   const handleSubmit = async () => {
+    setLoading(true)
     const res = await fetch("/api/posts/", {
       method: "POST",
       body: JSON.stringify({
@@ -88,68 +120,97 @@ const WritePage = () => {
         desc: value,
         img: media,
         slug: slugify(title),
-        catSlug: "travel"
+        catSlug: catSlug || "fashion",
       }),
     });
     // console.log(res)
     if (res.ok) {
-      // Request was successful
-      console.log("Post created successfully");
+const data= await res.json();
+
+      successNotify();
+      router.push(`/posts/${data.slug}`)
+      setLoading(false)
     } else {
       // Request failed, handle the error
       console.error("Error creating post:", res.statusText);
     }
   };
-  
+
+  const handleChange = (e) => {
+    setCatSlug(e.target.value)
+  };
+
   return (
     <div className={styles.container}>
-      <input
-      // value={title}
-        type="text"
-        placeholder="Title"
-        className={styles.input}
-        onChange={(e) => setTitle(e.target.value)}
-      />
+    {!loading?
+      <>
+      <div className={styles.titleAndCategoryContainer}>
+        <input
+          // value={title}
+          type="text"
+          placeholder="Title"
+          className={styles.input}
+          onChange={(e) => setTitle(e.target.value)}
+        />
 
-{/* todo add category */}
+        <span className={styles.selectCategoryOuter}>
+          <label htmlFor="blogCategory">Category:</label>
+          <select
+            className={styles.selectCategory}
+            name="blogCategory"
+            id="blogCategory"
+            onChange={handleChange}
+          >
+            <option value="" selected hidden >
+              Select Category
+            </option>
+            <option value="fashion">Fashion</option>
+            <option value="travel">Travel</option>
+            <option value="sports">Sports</option>
+            <option value="tech">Tech</option>
+            <option value="food">Food</option>
+            <option value="trading">Trading</option>
+          </select>
+        </span>
+      </div>
+
+      {/* todo add category */}
 
       <div className={styles.editor}>
-        <button className={styles.button} onClick={() => setOpen(!open)}>
-          <Image src="/plus.png" alt="" width={16} height={16} />
-        </button>
-        {open && (
-          <div className={styles.add}>
-            <input
-              type="file"
-              id="image"
-              onChange={(e) => setFile(e.target.files[0])}
-              style={{ display: "none" }}
-            />
-            <button className={styles.addButton}>
-              <label htmlFor="image">
-                <Image src="/image.png" alt="" width={16} height={16} />
-              </label>
-            </button>
-            <button className={styles.addButton}>
-              <Image src="/external.png" alt="" width={16} height={16} />
-            </button>
-            <button className={styles.addButton}>
-              <Image src="/video.png" alt="" width={16} height={16} />
-            </button>
-          </div>
-        )}
-
-        <ReactQuill
-          theme="bubble"
-          value={value}
-          onChange={setValue}
-          placeholder="Tell your story..."
-          className={styles.textArea}
+        <input
+          type="file"
+          id="image"
+          onChange={(e) => setFile(e.target.files[0])}
+          style={{ display: "none" }}
         />
+        <label htmlFor="image" className={styles.uploadImage}>
+          <p>Upload Image</p>
+          <div className={styles.add}>
+            <label>
+              <IoMdCloudUpload className={styles.uploadIcon} />
+            </label>
+          </div>
+        </label>
+        <div className={styles.quillAndButtonContainer}>
+          <div className={styles.quill}>
+            <ReactQuill
+              theme="snow"
+              value={value}
+              onChange={setValue}
+              placeholder="Tell your story..."
+              className={styles.textArea}
+              modules={modules}
+            />
+          </div>
+          <button className={styles.publish} onClick={handleSubmit}>
+            Publish
+          </button>
+        </div>
       </div>
-      <button className={styles.publish} onClick={handleSubmit}>
-        Publish
-      </button>
+      </>
+      :<Loading/>
+      }
+    
     </div>
   );
 };

@@ -1,29 +1,53 @@
-import React from 'react'
-import styles from '../Navbar/navbar.module.css'
-import Image from 'next/image'
-import Link from 'next/link'
-import ThemeToggle from '../ThemeToggle/ThemeToggle'
-import AuthLink from '../AuthLinks/AuthLink'
+import React from "react";
+import styles from "../Navbar/navbar.module.css";
+import Image from "next/image";
+import Link from "next/link";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import AuthLink from "../AuthLinks/AuthLink";
+import "@/app/globals.css";
+import { FaHome } from "react-icons/fa";
+import { TbCategory2 } from "react-icons/tb";
 
 function Navbar() {
   return (
-    <div className={styles.container}>
-        <div className={styles.social}>
-            <Image src="/facebook.png" alt='facebook' width={25} height={24}/>
-            <Image src="/instagram.png" alt='instagram' width={25} height={24}/>
-            <Image src="/tiktok.png" alt='tiktok' width={25} height={24}/>
-            <Image src="/youtube.png" alt='facebook' width={25} height={24}/>
+    <div className={styles.header}>
+      <div className={styles.container}>
+        <div className={styles.logo}>
+          <Link href="/" className={styles.logo_item}>
+            <Image
+              className={styles.logo_img}
+              src="/logo2.png"
+              alt="logo"
+              width={50}
+              height={50}
+            />
+            <div className="blogName_styles">WordWave</div>
+          </Link>
         </div>
-        <div className={styles.logo}>Blog</div>
-        <div className={styles.links}>
-            <ThemeToggle/>
-            <Link href="/" className={styles.link}>Homepage</Link>
-            <Link href="/" className={styles.link}>Contact</Link>
-            <Link href="/" className={styles.link}>About</Link>
-            <AuthLink/>
-        </div>
-    </div>
-  )
-} 
 
-export default Navbar
+        <div>
+          <ThemeToggle />
+        </div>
+
+        <div className={styles.links}>
+        <div className={styles.button_style}>
+          <Link href="/" className={styles.link}>
+            <FaHome className={styles.navIcon} />
+            Homepage
+          </Link>
+        </div>
+        <div className={styles.button_style}>
+        
+          <Link href="/blog" className={styles.link}>
+            <TbCategory2 className={styles.navIcon} />
+            Blog
+          </Link>
+        </div>
+          <AuthLink />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Navbar;

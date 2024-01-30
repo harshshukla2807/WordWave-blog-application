@@ -14,7 +14,7 @@ const getData=async ()=>{
 }
 
 
- const CategoryList=async ()=>{
+const CategoryList=async ()=>{
   
   const data= await getData()
   
@@ -23,7 +23,7 @@ const getData=async ()=>{
       <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
         {
-          data.map((item)=> <Link href="/blog?cat=style" className={`${styles.category} ${styles[item.slug]}`} key={item._id}>
+          data.map((item)=> <Link href={`/blog?cat=${item.slug}`} className={`${styles.category} ${styles[item.slug]}`} key={item._id}>
            {item.img && <Image
               src={item.img}
               alt=""

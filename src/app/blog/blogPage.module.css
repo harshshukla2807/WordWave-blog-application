@@ -1,7 +1,8 @@
 .title{
-    background-color: coral;
+    color:rgb(190, 217, 102);
+    margin-left: 40%;
+    width: fit-content;
     text-align: center;
-    color: white;
     padding: 5px 10px;
     text-transform: capitalize;
 }
@@ -9,3 +10,35 @@
     display: flex;
     gap: 50px;
 }
+
+.container{
+    margin: 85px;
+}
+
+@media screen and (max-width: 1536px){
+    
+}
+@media screen and (max-width: 1280px) {
+   
+}
+
+@media screen and (max-width: 1080px) {
+   
+}
+
+@media screen and (max-width: 768px) {
+    .container{
+        margin: 10px;
+    }
+}
+
+ 
+@media screen and (max-width: 640px) {
+   
+} 
+
+@media screen and (max-width: 440px) {
+    .container{
+        margin: 2px;
+    }
+} 

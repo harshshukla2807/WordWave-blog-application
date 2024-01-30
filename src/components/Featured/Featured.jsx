@@ -1,21 +1,24 @@
 import React from 'react'
 import styles from "./Featured.module.css"
 import Image from 'next/image'
+import Link from 'next/link'
+
 
 function Featured() {
   return (
     <div className={styles.container}> 
       <h1 className={styles.title}>
-        <b>Hey, Lama Dev here!</b> Discover my stories and creative ideas 
+        <b>Explore WordWave,</b>  Where Stories Unfold and Creativity Takes Flight! 
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
-          <Image src="/p1.jpeg" fill sizes=''  alt='' className={styles.image} />
+          <Image src="/travel/travelsafe.jpeg" fill sizes=''  alt='' className={styles.image} />
         </div>
         <div className={styles.textContainer}>
-          <h1 className={styles.postTitle}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, temporibus?</h1>
-          <p className={styles.postDesc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate libero vitae ipsum recusandae soluta! Quisquam voluptates atque explicabo repellendus minima quam totam officia, assumenda voluptas, quia hic voluptate modi nihil.</p>
-          <button className={styles.button}>Read More</button>
+          <h1 className={styles.postTitle}>Top 5 Safety Tips for Travelers</h1>
+          <p className={styles.postDesc}>Staying safe on the road is a universal concern for every traveler. Whether it's avoiding scams or being prepared for emergencies, here are five concise safety tips to ensure a smooth journey:</p>
+          <button className={styles.button}><Link href="/posts/top-5-safety-tips-for-travelers">Read More...</Link></button>
+          
         </div>
       </div>
     </div>

@@ -2,48 +2,36 @@ import React from "react";
 import styles from "./footer.module.css";
 import Image from "next/image";
 import Link from "next/link";
-
+import  "@/app/globals.css"
 function Footer() {
   return (
     <div className={styles.container}>
       <div className={styles.info}>
         <div className={styles.logo}>
-          <Image src="/logo.png" alt="lama blog" width={50} height={50} />
-          <h1 className={styles.logoText}>Lama Blog</h1>
+          <Image src="/logo2.png" alt="wordwavelogo" width={50} height={50} />
+          <h1 className="blogName_styles">WordWave</h1>
         </div>
         <p className={styles.desc}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam itaque
-          dolore vel totam quibusdam rem, animi quos perferendis voluptatum quia
-          libero ex pariatur hic excepturi tempore sapiente magni officiis
-          asperiores.
+        "WordWave: Your haven for inspiration, creativity, and captivating stories. Join us on this literary journey as we explore the boundless realms of imagination and share the magic of words!"
         </p>
-        <div className={styles.icons}>
-          <Image src="/facebook.png" alt="" width={18} height={18} />
-          <Image src="/instagram.png" alt="" width={18} height={18} />
-          <Image src="/tiktok.png" alt="" width={18} height={18} />
-          <Image src="/youtube.png" alt="" width={18} height={18} />
-        </div>
       </div>
       <div className={styles.links}>
-        <div className={styles.list}>
+      <div className={styles.list}>
           <span className={styles.listTitle}>Links</span>
           <Link href="/">Homepage</Link>
-          <Link href="/">Blog</Link>
-          <Link href="/">About</Link>
-          <Link href="/">Contact</Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/write">Write</Link>
         </div>
         <div className={styles.list}>
           <span className={styles.listTitle}>Tags</span>
-          <Link href="/">Style</Link>
-          <Link href="/">fashion</Link>
-          <Link href="/">Coding</Link>
-          <Link href="/">Travel</Link>
+          <Link href="/blog?cat=travel">Travel</Link>
+          <Link href="/blog?cat=sports">sports</Link>
+          <Link href="/blog?cat=tech">tech</Link>
         </div>
         <div className={styles.list}>
           <span className={styles.listTitle}>Social</span>
           <Link href="/">Facebook</Link>
           <Link href="/">Instagram</Link>
-          <Link href="/">Tiktok</Link>
           <Link href="/">Youtube</Link>
         </div>
       </div>
