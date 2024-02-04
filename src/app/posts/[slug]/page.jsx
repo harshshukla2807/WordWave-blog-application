@@ -6,7 +6,7 @@ import Comments from "@/components/Comments/Comments";
 import Loading from "@/app/Loading";
 
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+  const res = await fetch(`https://word-wave-blog-application.vercel.app/api/posts/${slug}`, {
     cache: "no-store",
   });
 
