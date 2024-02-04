@@ -6,6 +6,7 @@
     border-radius: 15px;
     cursor: pointer;
     font-size: 18px;
+    
 }
 
 .button:hover{  
@@ -14,3 +15,11 @@
     color: var(--bg);
     background-color: var(--textColor);
 }
+
+
+@media screen and (max-width: 1440px){
+   .button{
+       margin-top: 100px;
+   }
+    
+ }

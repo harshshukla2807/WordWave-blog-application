@@ -5,10 +5,10 @@
   }
   
   .container {
-    margin: 0 auto;
+    margin: 0px 80px;
     margin-top: 50px;
-    width: 100%;
-  
+    /* width: 100%; */
+
     padding: 20px 0px;
     display: flex;
     align-items: center;

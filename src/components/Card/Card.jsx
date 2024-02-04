@@ -37,7 +37,7 @@ const Card = ({ key, item }) => {
           dangerouslySetInnerHTML={{ __html: item?.desc.substring(0, 100) }}
         />
         {/* <div className={styles.desc}>{item?.desc}</div> */}
-        <div className={styles.link}>
+        <div className={styles.readmoreLink}>
           <Link href={`/posts/${item.slug}`}>Read More...</Link>
         </div>
       </div>

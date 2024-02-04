@@ -35,7 +35,7 @@ const data= await getData(slug)
               <Image src={data.user.image} alt="" fill sizes="" className={styles.image} />
             </div>}
             <div className={styles.userTextContainer}>
-              <span className={styles.username}>{data.user.name}</span>
+              <span className={styles.username}>{data?.user?.name}</span>
               <span className={styles.date}>{data.createdAt.substring(0,10)}</span>
             </div>
           </div>

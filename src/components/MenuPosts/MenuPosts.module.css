@@ -44,10 +44,13 @@
 
 .image{
     border-radius: 50%;
-    border: 3px solid grey;
+    border: 3px solid rgb(55, 55, 55);
     object-fit: cover;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    overflow: hidden;
 }
-
+/*  */
 .category{
     padding: 3px 8px;
     border-radius: 10px;

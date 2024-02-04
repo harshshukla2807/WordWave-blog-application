@@ -2,3 +2,42 @@
     display: flex;
     gap: 50px;
 }
+.container{
+    margin: 0px 100px;
+}
+
+@media screen and (max-width: 1440px){
+    .container{
+        margin: 0px 65px;
+    }
+ }
+ 
+ @media screen and (max-width: 1280px) {
+    .container{
+        margin: 0px 50px;
+    }
+  }
+ 
+ @media screen and (max-width: 1080px) {
+    .container{
+        margin: 0px 40px;
+    }
+ }
+ 
+ @media screen and (max-width: 768px) {
+    .container{
+        margin: 0px 20px;
+    }
+ }
+ 
+ @media screen and (max-width: 640px) {
+    .container{
+        margin: 0px 10px;
+    }
+ } 
+ @media screen and (max-width: 440px) {
+    .container{
+        margin: 0px 0px;
+    }
+ } 
+ 
