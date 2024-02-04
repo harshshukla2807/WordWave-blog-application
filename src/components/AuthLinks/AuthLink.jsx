@@ -23,6 +23,11 @@ function AuthLink() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  
+  if (status === "loading") {
+    return null;
+  }
+
 
   return (
     <>
