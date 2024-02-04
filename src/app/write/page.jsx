@@ -13,7 +13,7 @@ import {
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
 import { IoMdCloudUpload } from "react-icons/io";
-import ReactQuill from "react-quill";
+// import ReactQuill from "react-quill";
 import toast from 'react-hot-toast';
 import Loading from "../Loading";
 
@@ -24,6 +24,7 @@ const successNotify  = () => toast.success('Post created successfully');
 
 
 const WritePage = () => {
+  const ReactQuill = typeof window === "object" ? require("react-quill") : () => false;
   const router = useRouter();
   const { status } = useSession();
 
