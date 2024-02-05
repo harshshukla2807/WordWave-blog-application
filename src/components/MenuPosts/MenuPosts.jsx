@@ -32,7 +32,7 @@ const MenuPosts = ({widhImage}) => {
           </div>
         </div>
         </Link>
-        <Link href="/posts/demystifying-kubernetes-a-brief-overviewdemystifying-kubernetes-a-brief-overview" className={styles.item}>
+        <Link href="/posts/demystifying-kubernetes-a-brief-overview" className={styles.item}>
         {widhImage && <div className={styles.imageContainer}>
           <Image src="/tech/Kubernetes.png" alt="" fill sizes='' className={styles.image} />
         </div>}
