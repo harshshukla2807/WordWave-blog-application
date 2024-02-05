@@ -34,6 +34,8 @@ const Comments = ({ postSlug }) => {
       method:"POST",
       body: JSON.stringify({desc,postSlug})
     })
+    setDesc("");
+
     mutate();
   }
 
