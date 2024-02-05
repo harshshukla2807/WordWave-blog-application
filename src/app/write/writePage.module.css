@@ -175,6 +175,11 @@ background-color: var(--softBg);
     transform: scale(0.8);
   }
   
+  .publish:disabled{
+    background-color: #b3b3b1;
+    cursor: not-allowed;
+  }
+  
 @media screen and (max-width: 1536px){
    
 }
