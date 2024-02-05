@@ -13,6 +13,10 @@
     color: var(--softTextColor);
     }
     
+    .logout{
+        font-size: 2rem;
+        font-weight: 500;
+    }
     
     .link_button{
         font-size: .8rem;
@@ -80,9 +84,7 @@ cursor: pointer;
     .burger{
         display: flex;
     }
-    .link{
-        display: none;
-    }
+
    
     }
 

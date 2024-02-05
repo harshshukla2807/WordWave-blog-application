@@ -5,14 +5,13 @@ import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 import { FaPenNib } from "react-icons/fa";
 
-
 function AuthLink() {
   const { status } = useSession();
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth > 640 ) {
+      if (window.innerWidth > 640) {
         setOpen(false);
       }
     }
@@ -23,31 +22,33 @@ function AuthLink() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
+
   if (status === "loading") {
     return null;
   }
-
 
   return (
     <>
       {status === "unauthenticated" ? (
         <Link href="/login" className={styles.link}>
-          <span  className={`${styles.link_button} ${styles.button_style}`}>
+          <span className={`${styles.link_button} ${styles.button_style}`}>
             Login
           </span>
         </Link>
       ) : (
         <>
-          <Link href="/write" className={`${styles.link} ${styles.button_style}`}>
-          
-          <FaPenNib className={styles.navIcon}/>
+          <Link
+            href="/write"
+            className={`${styles.link} ${styles.button_style}`}
+          >
+            <FaPenNib className={styles.navIcon} />
             Write
-
           </Link>
           <span className={styles.link} onClick={() => signOut()}>
-            <div className={`${styles.link_button} ${styles.link_rev}`}>Logout</div>
-        </span>
+            <div className={`${styles.link_button} ${styles.link_rev}`}>
+              Logout
+            </div>
+          </span>
         </>
       )}
       <div className={styles.burger} onClick={() => setOpen(!open)}>
@@ -72,23 +73,17 @@ function AuthLink() {
             Blog
           </Link>
           {status === "unauthenticated" ? (
-            <Link
-              href="/login"
-              onClick={() => setOpen(!open)}
-            >
+            <Link href="/login" onClick={() => setOpen(!open)}>
               Login
             </Link>
           ) : (
             <>
-              <Link
-                href="/write"
-                onClick={() => setOpen(!open)}
-              >
+              <Link href="/write" onClick={() => setOpen(!open)}>
                 Write
               </Link>
-              <span className={styles.link} onClick={() => signOut()}>
-                Logout
-              </span>
+                <span className={`${styles.link} ${styles.logout}`} onClick={() => signOut()}>
+                  Logout
+                </span>
             </>
           )}
         </div>
