@@ -44,7 +44,7 @@ const Comments = ({ postSlug }) => {
       <h1 className={styles.title}>Comments</h1>
       {status === "authenticated" ? (
         <div className={styles.write}>
-          <textarea placeholder="write a comment..." className={styles.input} onChange={(e)=>setDesc(e.target.value)}/>
+          <textarea placeholder="write a comment..." value={desc} className={styles.input} onChange={(e)=>setDesc(e.target.value)}/>
           <button className={styles.button} onClick={handleSubmit}>Send</button>
         </div>
       ) : (
