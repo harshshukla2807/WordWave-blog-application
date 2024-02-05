@@ -19,6 +19,7 @@
   
   .editor {
     display: flex;
+    margin-top: 40px;
     flex-direction: column;
     gap: 20px;
     height: 700px;
@@ -64,7 +65,7 @@
     border: 2px solid white;
     border-radius: 20px;
     height: fit-content;
-    max-width: 60%;
+    /* max-width: 60%; */
 background-color: var(--softBg);
   }
   
@@ -188,7 +189,9 @@ background-color: var(--softBg);
 }
 
 @media screen and (max-width: 1080px) {
-   
+  .titleAndCategoryContainer{
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 768px) {
