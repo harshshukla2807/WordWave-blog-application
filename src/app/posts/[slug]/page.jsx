@@ -6,7 +6,7 @@ import Comments from "@/components/Comments/Comments";
 import Loading from "@/app/Loading";
 
 const getData = async (slug) => {
-  const res = await fetch(`wordwavee.vercel.app/api/posts/${slug}`, {
+  const res = await fetch(`https://wordwavee.vercel.app/api/posts/${slug}`, {
     cache: "no-store",
   });
 

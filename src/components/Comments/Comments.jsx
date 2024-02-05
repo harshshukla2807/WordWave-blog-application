@@ -23,7 +23,7 @@ const Comments = ({ postSlug }) => {
   const { status } = useSession();
 
   const { data,mutate, isLoading } = useSWR(
-    `wordwavee.vercel.app/api/comments?postSlug=${postSlug}`,
+    `https://wordwavee.vercel.app/api/comments?postSlug=${postSlug}`,
     fetcher
   );
 
