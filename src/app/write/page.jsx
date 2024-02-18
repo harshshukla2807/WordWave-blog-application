@@ -53,11 +53,11 @@ const WritePage = () => {
 
   useEffect(() => {
     const upload = () => {
-      const name = new Date().getTime + file.name;
+      const name = new Date().getTime() + file.name;
       const storageRef = ref(storage, name);
 
       const uploadTask = uploadBytesResumable(storageRef, file);
-
+      
       uploadTask.on(
         "state_changed",
         (snapshot) => {
