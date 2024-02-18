@@ -39,12 +39,12 @@ function AuthLink() {
         <>
           <Link
             href="/write"
-            className={`${styles.link} ${styles.button_style}`}
+            className={`${styles.link} ${styles.button_style} ${styles.writeLink}`}
           >
             <FaPenNib className={styles.navIcon} />
             Write
           </Link>
-          <span className={styles.link} onClick={() => signOut()}>
+          <span className={`${styles.link}  ${styles.logoutSpan}`} onClick={() => signOut()}>
             <div className={`${styles.link_button} ${styles.link_rev}`}>
               Logout
             </div>

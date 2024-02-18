@@ -87,6 +87,15 @@ cursor: pointer;
 
    
     }
+    @media  screen and (max-width:548px) {
+        .writeLink{
+            display: none;
+        }
+        .logoutSpan{
+            display: none;
+        }
+   
+    }
 
 
 
